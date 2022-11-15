@@ -15,6 +15,7 @@ import {
   Label,
   Button,
 } from "reactstrap";
+import { array } from "yup";
 // import { BookingTable } from "components/BookingTable";
 // import { useTable } from "react-table";
 class Booking extends Component {
@@ -37,6 +38,7 @@ class Booking extends Component {
     },
     {
       Header: "Renter",
+      id: "rent",
       accessor: "renter.username",
       width: 100,
     },
@@ -131,6 +133,17 @@ class Booking extends Component {
         });
       });
   }
+  onRowClick = (state, rowInfo, column, instance) => {
+    return {
+      onClick: (e) => {
+        // console.log(rowInfo.original._id);
+        console.log(
+          this.state.list.find((o) => o._id === rowInfo.original._id)
+        );
+      },
+    };
+  };
+
   element = document.q;
   render() {
     // let tbd = this.state.list.map((data) => {
@@ -180,6 +193,7 @@ class Booking extends Component {
                 showPageSizeOptions={false}
                 showPaginationTop={true}
                 defaultPageSize={10}
+                getTrProps={this.onRowClick}
               />
               {/* <BookingTable /> */}
               {/* <table className="table table-hover">
