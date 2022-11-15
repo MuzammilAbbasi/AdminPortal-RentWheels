@@ -1,0 +1,7 @@
+.icon {
+    /* padding-right: 40px; */
+    /* float:right; */
+    background: url(./Icon/schedule-calendar.png) no-repeat 98.5% center;
+    background-size: 20px;
+    z-index: 0;
+  }

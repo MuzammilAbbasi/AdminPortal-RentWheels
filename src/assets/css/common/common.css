@@ -1,0 +1,12 @@
+span.mlink{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+span.mlink:hover{
+  color: var(--theme-color-1); /* using scss variable value */
+}
+
+input.disabled{
+  cursor:not-allowed;
+}

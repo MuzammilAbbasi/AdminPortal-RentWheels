@@ -1,0 +1,98 @@
+.cardBody {
+    background-color: #d5f4f6;
+    border-radius: 12px;
+    /* background-color: #139548; */
+    /* background-image: linear-gradient(to right, #F15A25, #f15b25b7); */
+    /* background-image: linear-gradient(to left, #d5f4f6, #d5f4f6); */
+    /* style={{ borderRadius: 8 }} */
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+}
+
+@media screen and (max-width: 991.8px) {
+    #card-title {
+      display: none;
+    }
+  }
+
+.cardBodyUsc {
+    background-color: #ffe5e4;
+    border-radius: 12px;
+    /* background-color: #FFF205; */
+    /* background-image: linear-gradient(to left, #ffe5e4, #ffe5e4); */
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* background-color: #139548; */
+}
+
+.cardBodyMpos {
+    background-color: #bce5ba;
+    border-radius: 12px;
+    /* background-color: #DE0414; */
+    /* background-image: linear-gradient(to left, #BCE5BA, #BCE5BA); */
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* background-color: #139548; */
+}
+
+.cardBodyothers {
+    background-color: #96cef3ad;
+    border-radius: 12px;
+    /* background-color: #A1D1FF; */
+    /* background-image: linear-gradient(to right, #3F7295, #5dade2); */
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* background-color: #139548; */
+}
+.cardBodyThirdRow {
+    background-color: #E1F8DC;
+    border-radius: 12px;
+    /* background-color: #A1D1FF; */
+    /* background-image: linear-gradient(to right, #3F7295, #5dade2); */
+    /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+    /* background-color: #139548; */
+}
+
+.cardBody:hover {
+    background-color: #96e7ec;
+    /* background-color: #F39C12; */
+    /* background-image: linear-gradient(to left, #96e7ec, #96e7ec); */
+}
+
+.cardBodyUsc:hover {
+    background-color: #f0c6c4;
+    /* background-color: #F39C12; */
+    /* background-image: linear-gradient(to right, ffe5e4, ffe5e4); */
+
+}
+
+.cardBodyMpos:hover {
+    background-color: #9aec95;
+    /* background-color: #F39C12; */
+    /* background-image: linear-gradient(to right, #ffc76c, #969292); */
+}
+
+.cardBodyothers:hover {
+    background-color: #96cef3;
+    /* background-color: #F39C12; */
+    /* background-image: linear-gradient(to right, #ffc76c, #969292); */
+}
+.cardBodyThirdRow:hover {
+    background-color: #E1F8CD;
+    /* background-color: #F39C12; */
+    /* background-image: linear-gradient(to right, #ffc76c, #969292); */
+}
+
+.innerCard {
+    display: flex;
+}
+
+
+.formButtons {
+    background-color: #F39C12;
+    border-color: #F39C12;
+    color: #fff;
+}
+
+.formButtons:hover {
+    background-color: #139548;
+    color: #fff;
+    border-color: #139548;
+    box-shadow: #139548;
+}
