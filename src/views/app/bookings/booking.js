@@ -19,6 +19,7 @@ import { array } from "yup";
 // import { BookingTable } from "components/BookingTable";
 // import { useTable } from "react-table";
 class Booking extends Component {
+  curr = 0;
   StatusNamer = (st) => {
     return st === "0"
       ? "Pending"
@@ -29,6 +30,10 @@ class Booking extends Component {
       : st === "3"
       ? "Terminated"
       : "Completed";
+  };
+  dateformat = (st) => {
+    let temp = st.split("T");
+    return temp[0] + " " + temp[1].split("Z")[0];
   };
   columns = [
     {
@@ -56,11 +61,13 @@ class Booking extends Component {
       Header: "Starting Time",
       accessor: "startTime",
       width: 150,
+      Cell: ({ value }) => this.dateformat(value),
     },
     {
       Header: "End Time",
       accessor: "endTime",
       width: 150,
+      Cell: ({ value }) => this.dateformat(value),
     },
     {
       Header: "Total Rent",
@@ -119,12 +126,13 @@ class Booking extends Component {
     super(props);
     this.state = {
       list: [],
+      page: 0,
     };
     this.callAPI = this.callAPI.bind(this);
     this.callAPI();
   }
   callAPI() {
-    fetch("http://localhost:8000/api/v1/bookings")
+    fetch("http://localhost:8000/api/v1/bookings?page=1&limit=5")
       .then((response) => response.json())
       .then((data) => {
         // alert(data.Payload.data[0]._id);
@@ -142,6 +150,22 @@ class Booking extends Component {
         );
       },
     };
+  };
+
+  pageChange = () => {
+    // this.setState({ page: pageIndex });
+    // this.curr = pageIndex;
+    // console.log(this.curr);
+    fetch(`http://localhost:8000/api/v1/bookings?page=${this.curr + 1}&limit=5`)
+      .then((response) => response.json())
+      .then((data) => {
+        this.state.list = [];
+        this.setState({
+          list: data.Payload.data,
+        });
+        // this.state.list = data.Payload.data;
+      });
+    console.log(this.state.list);
   };
 
   element = document.q;
@@ -187,13 +211,23 @@ class Booking extends Component {
             <div className="container">
               <ReactTable
                 data={this.state.list}
+                manual
                 columns={this.columns}
+                pages={4}
+                defaultPageSize={5}
+                page={this.curr}
                 showPagination={true}
                 showPageJump={true}
                 showPageSizeOptions={false}
                 showPaginationTop={true}
-                defaultPageSize={10}
                 getTrProps={this.onRowClick}
+                // onPageChange={this.pageChange}
+                onPageChange={(pageIndex) => {
+                  this.curr = pageIndex;
+                  // this.setState({ page: pageIndex });
+                  this.pageChange();
+                }}
+                showPaginationBottom={false}
               />
               {/* <BookingTable /> */}
               {/* <table className="table table-hover">
