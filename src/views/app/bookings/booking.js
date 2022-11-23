@@ -16,8 +16,10 @@ import {
   Button,
 } from "reactstrap";
 import { array } from "yup";
+import { Input } from "rsuite";
 // import { BookingTable } from "components/BookingTable";
 // import { useTable } from "react-table";
+const divsearch = 12.5;
 class Booking extends Component {
   curr = 0;
   StatusNamer = (st) => {
@@ -168,6 +170,20 @@ class Booking extends Component {
     console.log(this.state.list);
   };
 
+  searchTable = (e, q) => {
+    fetch(`http://localhost:8000/api/v1/bookings?${q}=${e}`)
+      .then((response) => response.json())
+      .then((data) => {
+        this.state.list = [];
+        console.log(data);
+        this.setState({
+          list: data.Payload.data,
+        });
+        // this.state.list = data.Payload.data;
+      });
+    // console.log(this.state.list);
+  };
+
   element = document.q;
   render() {
     // let tbd = this.state.list.map((data) => {
@@ -208,6 +224,128 @@ class Booking extends Component {
         </Colxx>
         <Card>
           <CardBody>
+            <Row>
+              <Input
+                type="text"
+                name="date"
+                placeholder="Search"
+                className="icon form-control"
+                style={{
+                  width: `${divsearch}%`,
+                  borderRadius: "10px",
+                  padding: "0.5rem",
+                  position: "relative",
+                  //   left: "15px",
+                }}
+                required={true}
+                onChange={(e) => this.searchTable(e, "_id")}
+              />
+              <Input
+                type="text"
+                name="date"
+                placeholder="Search"
+                className="icon form-control"
+                style={{
+                  width: `${divsearch}%`,
+                  borderRadius: "10px",
+                  padding: "0.5rem",
+                  position: "relative",
+                  //   left: "15px",
+                }}
+                required={true}
+                onChange={(e) => this.searchTable(e, "renter")}
+              />
+              <Input
+                type="text"
+                name="date"
+                placeholder="Search"
+                className="icon form-control"
+                style={{
+                  width: `${divsearch}%`,
+                  borderRadius: "10px",
+                  padding: "0.5rem",
+                  position: "relative",
+                  //   left: "15px",
+                }}
+                required={true}
+                onChange={(e) => console.log(e.target.value)}
+              />
+              <Input
+                type="text"
+                name="date"
+                placeholder="Search"
+                className="icon form-control"
+                style={{
+                  width: `${divsearch}%`,
+                  borderRadius: "10px",
+                  padding: "0.5rem",
+                  position: "relative",
+                  //   left: "15px",
+                }}
+                required={true}
+                onChange={(e) => console.log(e.target.value)}
+              />
+              <Input
+                type="text"
+                name="date"
+                placeholder="Search"
+                className="icon form-control"
+                style={{
+                  width: `${divsearch}%`,
+                  borderRadius: "10px",
+                  padding: "0.5rem",
+                  position: "relative",
+                  //   left: "15px",
+                }}
+                required={true}
+                onChange={(e) => console.log(e.target.value)}
+              />
+              <Input
+                type="text"
+                name="date"
+                placeholder="Search"
+                className="icon form-control"
+                style={{
+                  width: `${divsearch}%`,
+                  borderRadius: "10px",
+                  padding: "0.5rem",
+                  position: "relative",
+                  //   left: "15px",
+                }}
+                required={true}
+                onChange={(e) => console.log(e.target.value)}
+              />
+              <Input
+                type="text"
+                name="date"
+                placeholder="Search"
+                className="icon form-control"
+                style={{
+                  width: `${divsearch}%`,
+                  borderRadius: "10px",
+                  padding: "0.5rem",
+                  position: "relative",
+                  //   left: "15px",
+                }}
+                required={true}
+                onChange={(e) => console.log(e.target.value)}
+              />
+              <Input
+                type="text"
+                name="date"
+                placeholder="Search"
+                className="icon form-control"
+                style={{
+                  width: `${divsearch}%`,
+                  borderRadius: "10px",
+                  padding: "0.5rem",
+                  position: "relative",
+                  //   left: "15px",
+                }}
+                required={true}
+                onChange={(e) => console.log(e.target.value)}
+              />
+            </Row>
             <div className="container">
               <ReactTable
                 data={this.state.list}
@@ -219,7 +357,7 @@ class Booking extends Component {
                 showPagination={true}
                 showPageJump={true}
                 showPageSizeOptions={false}
-                showPaginationTop={true}
+                showPaginationTop={false}
                 getTrProps={this.onRowClick}
                 // onPageChange={this.pageChange}
                 onPageChange={(pageIndex) => {
@@ -227,7 +365,7 @@ class Booking extends Component {
                   // this.setState({ page: pageIndex });
                   this.pageChange();
                 }}
-                showPaginationBottom={false}
+                showPaginationBottom={true}
               />
               {/* <BookingTable /> */}
               {/* <table className="table table-hover">

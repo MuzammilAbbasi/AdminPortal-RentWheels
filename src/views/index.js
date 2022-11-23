@@ -1,16 +1,13 @@
 import React, { Component } from "react";
-import { Redirect,Switch ,Route } from "react-router-dom";
-
+import { Redirect, Switch, Route } from "react-router-dom";
 
 class Main extends Component {
   render() {
-    return(
-      
+    return (
       <Switch>
-          <Redirect from="/user-operations" to="/user-operations" />
+        <Redirect from="/user-operations" to="/user-operations" />
 
-          <Redirect to="/app" />
-      
+        <Redirect to="/user" />
       </Switch>
     );
   }

@@ -14,7 +14,11 @@ const UserManagement = React.lazy(() =>
 );
 
 const Rda = React.lazy(() => import(/* webpackChunkName: "rda" */ "./rda"));
+
 const Bookings = React.lazy(() => import("./bookings"));
+
+const AddVehicleCategory = React.lazy(() => import("./addvehicat"));
+
 const Batch = React.lazy(() =>
   import(/* webpackChunkName: "rda" */ "./analytics")
 );
@@ -74,6 +78,10 @@ class App extends Component {
               <Route
                 path={`${match.url}/bookings`}
                 render={(props) => <Bookings {...props} />}
+              />
+              <Route
+                path={`${match.url}/addvehicat`}
+                render={(props) => <AddVehicleCategory {...props} />}
               />
               <Route
                 path={`${match.url}/rda`}

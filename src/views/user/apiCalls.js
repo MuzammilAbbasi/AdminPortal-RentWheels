@@ -1,29 +1,33 @@
-import axios from 'axios'
-import md5 from 'md5';
-import config from "../../config"
+import axios from "axios";
+import md5 from "md5";
+import config from "../../config";
 import { NotificationManager } from "../../components/common/react-notifications";
-import { getHeaders } from '../../constants/requestHeaders';
+import { getHeaders } from "../../constants/requestHeaders";
 
 export const login = (body, onSuccess, onFailure) => {
-
   let body1 = {
-    userId: body.userId,
-    password: md5(body.password)
+    username: body.userId,
+    password: body.password,
   };
-  console.log(`${config.url.backoffice}${config.endpoint.backoffice.user}${config.endpoint.backoffice.login}`,"login")
-  const url = `${config.url.backoffice}${config.endpoint.backoffice.user}${config.endpoint.backoffice.login}`;
+  // console.log(
+  //   `${config.url.backoffice}${config.endpoint.backoffice.user}${config.endpoint.backoffice.login}`,
+  //   "login"
+  // );
+  const url = "http://localhost:8000/api/v1/users/login"; //`${config.url.backoffice}${config.endpoint.backoffice.user}${config.endpoint.backoffice.login}`;
   //  "https://staging.nbp.p.azurewebsites.net/Login";
   //  "https://ehsaas-mpos.paysyslabs.com/backoffice/user/login/";
   return axios
     .post(url, body1)
-    .then(res => {
+    .then((res) => {
+      console.log(res.headers);
       onSuccess(res);
-    }).catch((error) => {
-      onFailure(error)
+    })
+    .catch((error) => {
+      onFailure(error);
       if (error.response) {
         // The request was made and the server responded with a status code
         // that falls out of the range of 2xx
-        console.log('getAll error.response: ', error.response);
+        console.log("getAll error.response: ", error.response);
         console.log(error.response.data);
         console.log(error.response.status);
         console.log(error.response.data.message);
@@ -41,7 +45,7 @@ export const login = (body, onSuccess, onFailure) => {
         // The request was made but no response was received
         // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
         // http.ClientRequest in node.js
-        console.log('getAll error.request: ', error.request);
+        console.log("getAll error.request: ", error.request);
         NotificationManager.error(
           "ERR_CONNECTION_REFUSED",
           "",
@@ -52,34 +56,25 @@ export const login = (body, onSuccess, onFailure) => {
         );
       } else {
         // Something happened in setting up the request that triggered an Error
-        console.log('getAll else error: ', error.message);
-        NotificationManager.error(
-          "Unknown Error",
-          "",
-          0,
-          null,
-          null,
-          "filled"
-        );
+        console.log("getAll else error: ", error.message);
+        NotificationManager.error("Unknown Error", "", 0, null, null, "filled");
       }
-
     });
-}
+};
 
 export const logout = (onSubmit) => {
-
-  const url =
-    `${config.url.backoffice}${config.endpoint.backoffice.user}${config.endpoint.backoffice.logout}`;
+  const url = `${config.url.backoffice}${config.endpoint.backoffice.user}${config.endpoint.backoffice.logout}`;
   return axios
     .get(url, getHeaders())
-    .then(res => {
+    .then((res) => {
       onSubmit(res);
-    }).catch((error) => {
-      onSubmit(error)
+    })
+    .catch((error) => {
+      onSubmit(error);
       if (error.response) {
         // The request was made and the server responded with a status code
         // that falls out of the range of 2xx
-        console.log('getAll error.response: ', error.response);
+        console.log("getAll error.response: ", error.response);
         console.log(error.response.data);
         console.log(error.response.status);
         console.log(error.response.data.message);
@@ -88,10 +83,10 @@ export const logout = (onSubmit) => {
         // The request was made but no response was received
         // `error.request` is an instance of XMLHttpRequest in the browser and an instance of
         // http.ClientRequest in node.js
-        console.log('getAll error.request: ', error.request);
+        console.log("getAll error.request: ", error.request);
       } else {
         // Something happened in setting up the request that triggered an Error
-        console.log('getAll else error: ', error.message);
+        console.log("getAll else error: ", error.message);
       }
     });
-}
+};

@@ -78,105 +78,110 @@ class Home extends Component {
       to: "/app/bookings/booking",
     });
     data.push({
-      title: "menu.callcenter",
-      icon: "simple-icon-call-out",
-      to: "/app/call-center/CallCenter",
-      type: "menu",
-      value: "",
+      title: "Add-Vehicle-Category",
+      icon: "iconsminds-add",
+      to: "/app/addvehicat/addvehcilecategory",
     });
-    data.push({
-      title: "menu.bulk-ibt",
-      icon: "iconsminds-arrow-mix",
-      to: "/app/bulk-ibt/fund-transfer-transactions",
-      type: "menu",
-      value: "",
-    });
-    data.push({
-      title: "menu.bulk-ibft",
-      icon: "iconsminds-financial",
-      to: "/app/bulk-ibft/fund-transactions",
-      type: "menu",
-      value: "",
-    });
-    data.push({
-      title: "collapse.mobile-app-registration",
-      icon: "iconsminds-male",
-      to: "/app/registration/MobileAppRegistration",
-      type: "menu",
-      value: "",
-    });
-    data.push({
-      title: "transaction.title",
-      icon: "iconsminds-dollar",
-      to: "/app/transaction/SAFTransactionResult",
-      type: "menu",
-      value: "",
-      id: "transaction.title",
-      label: "transaction.title",
-    });
-    data.push({
-      title: "customerinfo.title",
-      icon: "iconsminds-information",
-      to: "/app/report/CustomerInformation",
-      type: "menu",
-      value: "",
-      id: "customerinfo.title",
-      label: "customerinfo.title",
-    });
-    data.push({
-      title: "Activation/Deactivation Report",
-      icon: "iconsminds-photo-album-2",
-      to: "/app/report/ActivationDeactivation",
-      type: "menu",
-      value: "",
-      id: "Activation/Deactivation Report",
-      label: "Activation/Deactivation Report",
-    });
-    data.push({
-      title: "Application Audit Trail",
-      icon: "iconsminds-pantone",
-      to: "/app/report/LoginAudit",
-      type: "menu",
-      value: "",
-      id: "Application Audit Trail",
-      label: "Application Audit Trail",
-    });
-    data.push({
-      title: "Back Office User Report",
-      icon: "iconsminds-folder-add--",
-      to: "/app/report/BackOfficeReport",
-      type: "menu",
-      value: "",
-      id: "Back Office User Report",
-      label: "Back Office User Report",
-    });
-    data.push({
-      title: "Virtual Card Activation/Deact Report",
-      icon: "iconsminds-folder-delete",
-      to: "/app/report/VirtualCardReport",
-      type: "menu",
-      value: "",
-      id: "Virtual Card Activation/Deact Report",
-      label: "Virtual Card Activation/Deact Report",
-    });
-    data.push({
-      title: "menu.GetVirtualCardInfo",
-      icon: "simple-icon-info",
-      to: "/app/report/GetVirtualCardInfo",
-      type: "menu",
-      value: "",
-      id: "menu.GetVirtualCardInfo",
-      label: "menu.GetVirtualCardInfo",
-    });
-    data.push({
-      title: "Reports",
-      icon: "iconsminds-file-clipboard-file---text",
-      to: "http://40.68.251.49:8081/jasperserver/login.html",
-      type: "external",
-      value: "",
-      id: "Reports",
-      label: "Reports",
-    });
+    // data.push({
+    //   title: "menu.callcenter",
+    //   icon: "simple-icon-call-out",
+    //   to: "/app/call-center/CallCenter",
+    //   type: "menu",
+    //   value: "",
+    // });
+    // data.push({
+    //   title: "menu.bulk-ibt",
+    //   icon: "iconsminds-arrow-mix",
+    //   to: "/app/bulk-ibt/fund-transfer-transactions",
+    //   type: "menu",
+    //   value: "",
+    // });
+    // data.push({
+    //   title: "menu.bulk-ibft",
+    //   icon: "iconsminds-financial",
+    //   to: "/app/bulk-ibft/fund-transactions",
+    //   type: "menu",
+    //   value: "",
+    // });
+    // data.push({
+    //   title: "collapse.mobile-app-registration",
+    //   icon: "iconsminds-male",
+    //   to: "/app/registration/MobileAppRegistration",
+    //   type: "menu",
+    //   value: "",
+    // });
+    // data.push({
+    //   title: "transaction.title",
+    //   icon: "iconsminds-dollar",
+    //   to: "/app/transaction/SAFTransactionResult",
+    //   type: "menu",
+    //   value: "",
+    //   id: "transaction.title",
+    //   label: "transaction.title",
+    // });
+    // data.push({
+    //   title: "customerinfo.title",
+    //   icon: "iconsminds-information",
+    //   to: "/app/report/CustomerInformation",
+    //   type: "menu",
+    //   value: "",
+    //   id: "customerinfo.title",
+    //   label: "customerinfo.title",
+    // });
+    // data.push({
+    //   title: "Activation/Deactivation Report",
+    //   icon: "iconsminds-photo-album-2",
+    //   to: "/app/report/ActivationDeactivation",
+    //   type: "menu",
+    //   value: "",
+    //   id: "Activation/Deactivation Report",
+    //   label: "Activation/Deactivation Report",
+    // });
+    // data.push({
+    //   title: "Application Audit Trail",
+    //   icon: "iconsminds-pantone",
+    //   to: "/app/report/LoginAudit",
+    //   type: "menu",
+    //   value: "",
+    //   id: "Application Audit Trail",
+    //   label: "Application Audit Trail",
+    // });
+    // data.push({
+    //   title: "Back Office User Report",
+    //   icon: "iconsminds-folder-add--",
+    //   to: "/app/report/BackOfficeReport",
+    //   type: "menu",
+    //   value: "",
+    //   id: "Back Office User Report",
+    //   label: "Back Office User Report",
+    // });
+    // data.push({
+    //   title: "Virtual Card Activation/Deact Report",
+    //   icon: "iconsminds-folder-delete",
+    //   to: "/app/report/VirtualCardReport",
+    //   type: "menu",
+    //   value: "",
+    //   id: "Virtual Card Activation/Deact Report",
+    //   label: "Virtual Card Activation/Deact Report",
+    // });
+    // data.push({
+    //   title: "menu.GetVirtualCardInfo",
+    //   icon: "simple-icon-info",
+    //   to: "/app/report/GetVirtualCardInfo",
+    //   type: "menu",
+    //   value: "",
+    //   id: "menu.GetVirtualCardInfo",
+    //   label: "menu.GetVirtualCardInfo",
+    // });
+    // data.push({
+    //   title: "Reports",
+    //   icon: "iconsminds-file-clipboard-file---text",
+    //   to: "http://40.68.251.49:8081/jasperserver/login.html",
+    //   type: "external",
+    //   value: "",
+    //   id: "Reports",
+    //   label: "Reports",
+    // });
     // data.push({
     //   title: "Analytics",
     //   icon: "iconsminds-monitor-analytics",

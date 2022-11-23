@@ -21,7 +21,7 @@ class Login extends Component {
   }
 
   onSuccess = (response) => {
-    console.log(response);
+    // console.log(response);
     this.setState({ loading: false });
     const { status, data } = response;
     const { history } = this.props;
@@ -31,13 +31,16 @@ class Login extends Component {
       // // history.push('/');
       if (data.firstLogin) {
         history.push({
-          pathname: "/user-operations/changepassword",
-          state: data.firstLogin
+          pathname: "/app/dashboard/home",
+          state: data.firstLogin,
         });
       } else {
-        history.push("/");
+        history.push("/app/dashboard/home");
       }
     }
+    // console.log(localStorage.getItem("Set-Cookie"));
+    // console.log(response.headers["Set-Cookie"]);
+    // console.log(document.cookie.match(""));
   };
 
   onFailure = (error) => {
@@ -66,13 +69,9 @@ class Login extends Component {
     let error;
     if (!value) {
       error = "Please enter your password";
-    } else if (/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,20}$/.test(value) === false) {
-      error =
-        "Password must contain at least 8 characters,including UPPERCASE letter, lowercase letter,number and a special character";
     }
     return error;
   };
-
 
   // componentDidUpdate() {
   //   if (this.props.error) {
@@ -92,16 +91,14 @@ class Login extends Component {
   //     NotificationManager.info("Please Login with your new Password","Login Again");
   //   }
   // }
-  
+
   render() {
     return (
       <Row className="h-100">
         <Colxx xxs="12" md="10" className="mx-auto my-auto">
           <Card className="auth-card">
             <div className="position-relative image-side ">
-              <p className="text-white h2">
-                Welcome to National Bank
-              </p>
+              <p className="text-white h2">Welcome to RentWheels</p>
               <p className="white mb-0">
                 Please use your credentials to login.
               </p>

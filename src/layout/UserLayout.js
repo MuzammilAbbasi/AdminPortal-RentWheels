@@ -12,11 +12,11 @@ class UserLayout extends Component {
     return (
       <Fragment>
         {/* <div className="fixed-background" /> */}
-        <div id="container" >
-          <img src="/assets/img/background1.jpg" alt="oops"/>
-          <img src="/assets/img/background2.jpg" alt="oops"/>
-          <img src="/assets/img/background3.jpg" alt="oops"/>
-          <img src="/assets/img/background4.jpg" alt="oops"/>
+        <div id="container">
+          <img src="/assets/img/car1.jpeg" alt="oops" />
+          <img src="/assets/img/car2.jpg" alt="oops" />
+          <img src="/assets/img/car3.jpg" alt="oops" />
+          <img src="/assets/img/car4.jpg" alt="oops" />
         </div>
         <main>
           <div className="container">{this.props.children}</div>
