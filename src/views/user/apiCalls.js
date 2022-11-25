@@ -16,10 +16,13 @@ export const login = (body, onSuccess, onFailure) => {
   const url = "http://localhost:8000/api/v1/users/login"; //`${config.url.backoffice}${config.endpoint.backoffice.user}${config.endpoint.backoffice.login}`;
   //  "https://staging.nbp.p.azurewebsites.net/Login";
   //  "https://ehsaas-mpos.paysyslabs.com/backoffice/user/login/";
+  // const instance = axios.create({
+  //   withCredentials: true,
+  // });
   return axios
     .post(url, body1)
     .then((res) => {
-      console.log(res.headers);
+      console.log(res);
       onSuccess(res);
     })
     .catch((error) => {

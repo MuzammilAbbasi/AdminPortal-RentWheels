@@ -274,7 +274,7 @@ class TopNav extends Component {
           <span className="logo d-none d-xs-block" />
           <span className="logo-mobile d-block d-xs-none" />
         </a> */}
-        <a className="navbar-logo" href="/">
+        <a className="navbar-logo" href="/app">
           <span className="logo d-none d-xs-block" />
           <span className="logo-mobile d-block d-xs-none" />
           {/* <img src={NBP} width="250px" height="50px"/> */}

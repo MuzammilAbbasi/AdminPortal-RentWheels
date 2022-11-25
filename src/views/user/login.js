@@ -59,8 +59,6 @@ class Login extends Component {
     let error;
     if (!value) {
       error = "Please enter your User Id";
-    } else if (!/^[A-Za-z0-9]+$/i.test(value)) {
-      error = "Invalid User Id";
     }
     return error;
   };

@@ -16,20 +16,14 @@ import {
 import { DropzoneComponent } from "react-dropzone-component";
 import "dropzone/dist/min/dropzone.min.css";
 
-import * as Yup from "yup";
 import FormikCustomComponents from "containers/forms/FormikCustomComponents";
+
+import { adddvehiclecategory } from "./apiCalls";
 
 export default class addvehcilecategory extends Component {
   ReactDOMServer = require("react-dom/server");
   fUp = false;
   text = "";
-  shape = {
-    cnic: Yup.string()
-      .required("Required")
-      .min(13, "Too Short!")
-      .max(13, "Too Long!")
-      .matches(/^[0-9]+$/, "Invalid CNIC"),
-  };
 
   componentConfig = {
     iconFiletypes: [".jpg", ".png", ".gif"],
@@ -37,13 +31,12 @@ export default class addvehcilecategory extends Component {
     postUrl: "/uploadHandler",
   };
 
-  validationSchema = Yup.object().shape(this.shape);
-
   constructor(props) {
     super(props);
 
     this.state = {
       //   collapse: false,
+      loading: false,
       list: [],
       editinitValues: {
         djsConfig: {
@@ -80,7 +73,14 @@ export default class addvehcilecategory extends Component {
     } else if (this.text === "") {
       alert("Enter Text");
     } else {
-      console.log(this.state.list);
+      this.setState({ loading: true });
+      adddvehiclecategory(
+        this.text,
+        this.state.list,
+        this.onSuccess,
+        this.onFailure
+      );
+      // console.log(this.state.list);
     }
   }
   coTe(t) {
@@ -91,6 +91,12 @@ export default class addvehcilecategory extends Component {
     }
   }
 
+  onSuccess = (response) => {
+    console.log(response);
+  };
+  onFailure = (response) => {
+    console.log(response);
+  };
   //   u = (req, res) => {
   //     console.log(req);
   //   };
