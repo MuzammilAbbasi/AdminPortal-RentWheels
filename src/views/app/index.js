@@ -17,6 +17,8 @@ const Rda = React.lazy(() => import(/* webpackChunkName: "rda" */ "./rda"));
 
 const Bookings = React.lazy(() => import("./bookings"));
 
+const VehicleList = React.lazy(() => import("./vehicles"));
+
 const AddVehicleCategory = React.lazy(() => import("./addvehicat"));
 
 const Batch = React.lazy(() =>
@@ -78,6 +80,10 @@ class App extends Component {
               <Route
                 path={`${match.url}/bookings`}
                 render={(props) => <Bookings {...props} />}
+              />
+              <Route
+                path={`${match.url}/vehicles`}
+                render={(props) => <VehicleList {...props} />}
               />
               <Route
                 path={`${match.url}/addvehicat`}

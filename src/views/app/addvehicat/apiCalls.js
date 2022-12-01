@@ -6,10 +6,16 @@ export const adddvehiclecategory = (
   onSuccess,
   onFailure
 ) => {
-  let body = {
-    vehicleType: vehicleCat,
-    file: categoryPic,
+  let formData = new FormData();
+
+  formData.append('vehicleType',vehicleCat);
+  formData.append('image',categoryPic);
+
+
+  const config = {     
+    headers: { 'content-type': 'multipart/form-data' }
   };
+
   // console.log(
   //   `${config.url.backoffice}${config.endpoint.backoffice.user}${config.endpoint.backoffice.login}`,
   //   "login"
@@ -21,7 +27,7 @@ export const adddvehiclecategory = (
   //   withCredentials: true,
   // });
   return axios
-    .post(url, body)
+    .post(url, formData)
     .then((res) => {
       console.log(res);
       onSuccess(res);

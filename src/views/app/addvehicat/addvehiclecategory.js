@@ -74,6 +74,7 @@ export default class addvehcilecategory extends Component {
       alert("Enter Text");
     } else {
       this.setState({ loading: true });
+      console.log(this.state.list)
       adddvehiclecategory(
         this.text,
         this.state.list,
